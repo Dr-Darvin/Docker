@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  redis-server:
+    image: 'redis'
+
+  node-app:
+    restart: always
+    build: . # look for current directory to build an image 
+    ports:
+      - "8081:8081" # in yaml by '-'  we can define an array 
+
+# when defining 2 containers to provsion in same compsoe file 
+# will create them in the same network.
